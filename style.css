@@ -1,0 +1,95 @@
+/*****GENERAL*******
+********************/
+body {
+	margin-top:0;
+}
+div {
+	margin-top: 1%;
+}
+
+
+/*****HEADER*******
+********************/
+header {
+	width:100%;
+}
+
+h1{
+	text-align: center;
+	font-family: "Bebas Neue";
+	letter-spacing:0.135em;
+	word-spacing: 0.07em;
+}
+
+#LOGO{
+	width:6%;
+	display:block;
+	margin:0 auto;
+}
+
+#INTRO{
+	font-family: Georgia, Times, Serif;
+	text-align: center;
+	margin-bottom:.5%;
+	font-size: 95%;
+}
+
+#SUB{
+	font-family: Georgia, Times, Serif;
+	text-align: center;
+	font-size: 85%;
+}
+hr{
+	margin-bottom:0;
+}
+
+
+
+/*****ADD FORM*******
+********************/
+#addbutton{
+	margin-top:0;
+	/*z-index: -10;*/
+	position: relative;
+	top: -5px;
+}
+#tab{
+	width:3%;
+	display:block;
+	margin:0 auto;
+	outline:none;
+}
+#formpanel{
+	/*background-color:purple;*/
+	display: none;
+	width:50%;
+	height:400px;
+	margin:0 auto 1% auto;
+	position:relative;
+	top:-25px;
+	z-index:-1;
+}
+.input{
+	font-size:75%;
+	color:#5a5854;
+	background-color:#f2f2f2;
+	border:1px solid #bdbdbd;
+	padding:5px 5px 5px 30px;
+	display:block;
+	width:40%;
+	margin:1% 0 0 3%;
+}
+
+.input:focus, .input:hover{
+	background-color:#ffffff;
+	border:1px solid #b1e1e4;
+}
+
+/*****ENTRIES*******
+********************/
+.ENTRY{
+	background-color:blue;
+	width:18%;
+	float:left;
+	margin: 0% 1%;
+}

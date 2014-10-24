@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html ng-app="ideaboard">
+<head>
+	<title></title>
+	<!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.19/angular.min.js"></script>
+    <!-- Firebase -->
+    <script src="https://cdn.firebase.com/js/client/1.0.21/firebase.js"></script>
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/0.8.2/angularfire.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="angular.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body ng-controller="ideaCtrl">
+	<!--HEADER-->
+	<header>
+		<h1>BEND THE PEN</h1>
+		<img id="LOGO" src="img/btplogo.png"/>
+		<hr style= "width: 50%">
+		<p id="INTRO">A specially curated website for the intention of progressing and organizing my thoughts and my art.</p>
+		<p id="SUB">#BendthePen #EMR</p>
+		<hr style= "width: 50%">
+	</header>
+
+	<!--ADD-->
+	<div id="addbutton">
+		<input type="image" src="img/addtab-bold.png" alt="SUBMIT" id="tab">
+	</div>
+
+	<!--ADD FORM-->
+	<div id="formpanel">
+		<form ng-submit="addPin(image_url, video, audio, words, hashtags);">
+			<label>Image</label>
+			<input class="input" type="url" ng-model="image_url"><br>
+			<label>Video</label>
+			<input class="input" type="text" ng-model="video"><br>
+			<label>Audio</label>
+			<input class="input" type="text" ng-model="audio"><br>
+			<label>Text</label>
+			<textarea class="input" ng-model="words">enter text</textarea><br>
+			<label>Tags</label>
+			<input class="input" type="text" ng-model="hashtags"><br>
+			<input type="submit" value="Add Me" id="doneadd">
+		</form>
+	</div>
+
+	<!--ENTRIES W DELETE FUNCTION...WILL EVENTUALLY ADD LIKE BUTTON-->
+	<div class="ENTRY" ng-repeat="entry in posts">
+		<img src="{{entry.image_url}}"/>
+		{{entry.video + entry.audio + entry.words + entry.hashtags}}
+		<button ng-click="deletePin(entry)">Delete</button>
+	</div>
+</body>
+</html>
