@@ -31,5 +31,15 @@ app.controller("ideaCtrl", function($scope, $firebase){
 	    $("#formpanel").slideUp("slow");
 	  });
 	});
-
 })
+
+//////////////////////////////////////////////////////////
+
+// 	$(window).load(function(){
+// 		$container.masonry({
+// 		  // columnWidth: 25,
+// 		  // itemSelector: '.columns',
+// 	})
+// });
+
+

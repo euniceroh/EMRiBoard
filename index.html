@@ -8,8 +8,19 @@
     <script src="https://cdn.firebase.com/js/client/1.0.21/firebase.js"></script>
     <!-- AngularFire -->
     <script src="https://cdn.firebase.com/libs/angularfire/0.8.2/angularfire.min.js"></script>
+    <!--Bootstrap-->
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<!--Local Scripts-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="angular.js"></script>
+    <script src="masonry.pkgd.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
@@ -33,24 +44,49 @@
 	<div id="formpanel">
 		<form ng-submit="addPin(image_url, video, audio, words, hashtags);">
 			<label>Image</label>
-			<input class="input" type="url" ng-model="image_url"><br>
+				<input class="input" type="url" ng-model="image_url"><br>
 			<label>Video</label>
-			<input class="input" type="text" ng-model="video"><br>
+				<input class="input" type="text" ng-model="video"><br>
 			<label>Audio</label>
-			<input class="input" type="text" ng-model="audio"><br>
+				<input class="input" type="text" ng-model="audio"><br>
 			<label>Text</label>
-			<textarea class="input" ng-model="words">enter text</textarea><br>
+				<textarea class="input" ng-model="words">enter text</textarea><br>
 			<label>Tags</label>
-			<input class="input" type="text" ng-model="hashtags"><br>
+				<input class="input" type="text" ng-model="hashtags"><br>
 			<input type="submit" value="Add Me" id="doneadd">
 		</form>
 	</div>
 
 	<!--ENTRIES W DELETE FUNCTION...WILL EVENTUALLY ADD LIKE BUTTON-->
-	<div class="ENTRY" ng-repeat="entry in posts">
-		<img src="{{entry.image_url}}"/>
-		{{entry.video + entry.audio + entry.words + entry.hashtags}}
-		<button ng-click="deletePin(entry)">Delete</button>
+	<!-- <div id="container">
+		<div id="columns">
+			<div class="entry" ng-repeat="entry in posts">
+				<img class="entryimg" src="{{entry.image_url}}"/><br>
+				{{entry.video}}<br>
+				{{entry.audio}}<br>
+				{{entry.words}}<br>
+				{{entry.hashtags}}<br>
+				<button ng-click="deletePin(entry)">Delete</button>
+			</div>
+		</div>	 
+	</div> -->
+
+	<div class="container">
+		<div class="row">
+		 	<div class="item" ng-repeat="entry in posts">
+		        <div class="well"> 
+			       
+						<img class="entryimg" src="{{entry.image_url}}"/><br>
+						{{entry.video}}<br>
+						{{entry.audio}}<br>
+						{{entry.words}}<br>
+						{{entry.hashtags}}<br>
+						<button ng-click="deletePin(entry)">Delete</button>
+					
+		        </div>
+		    </div>
+		</div>
 	</div>
+
 </body>
 </html>
