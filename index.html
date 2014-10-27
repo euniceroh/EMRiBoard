@@ -8,18 +8,19 @@
     	<script src="https://cdn.firebase.com/js/client/1.0.21/firebase.js"></script>
     <!-- AngularFire -->
     	<script src="https://cdn.firebase.com/libs/angularfire/0.8.2/angularfire.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <!--Bootstrap-->
-    <!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	    <!-- Latest compiled and minified CSS -->
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
-	<!-- Optional theme -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		<!-- Optional theme -->
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 
-	<!-- Latest compiled and minified JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<!-- Latest compiled and minified JavaScript -->
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	<!--Local Scripts-->
-    	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
-    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    	
     	<script type="text/javascript" src="angular.js"></script>
     	<script src="masonry.pkgd.min.js"></script>
     	<link rel="stylesheet" type="text/css" href="style.css">
@@ -61,19 +62,19 @@
 		</form>
 	</div>
 
-<!--ENTRIES W DELETE FUNCTION...WILL EVENTUALLY ADD LIKE BUTTON-->
+<!--ENTRIES W DELETE FUNCTION, LIKE BUTTON-->
 	
 	<div class="container">
 		<div class="row">
 		 	<div class="item" ng-repeat="entry in posts | filter:searchEntry">
 		        <div class="well"> 
 			       <div ng-switch on="entry.like">
-						<img class="entryimg" src="{{entry.image_url}}"/><br>
+						<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"><img class="entryimg" src="{{entry.image_url}}"/></button><br>
 						{{entry.video}}<br>
 						{{entry.audio}}<br>
-						{{entry.words}}<br>
-						{{entry.hashtags}}<br>
-						<button ng-click="deletePin(entry)">Delete</button>
+						<p>{{entry.words}}</p>
+						<p id="tags">{{entry.hashtags}}</p>
+						<button class="trashbutton" ng-click="deletePin(entry)"><img class="trashbuttonimg" src="img/trash.png"/></button>
 						<button ng-switch-when="false" ng-click="likePin(entry)">Like</button>
 						<button ng-switch-when="true" ng-click="likePin(entry)" class="liked">Like</button>	
 					</div>
@@ -82,9 +83,24 @@
 		</div>
 	</div>
 	
-	<!-- <modal-dialog show='modalShown' width='400px' height='60%'>
-		<p>Modal Content Goes here asdfsdf<img src="{{entry.image_url}}"/></p>
-	</modal-dialog>		 -->
+	<!-- MODAL -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+	        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+	      </div>
+	      <div class="modal-body">
+	        ...
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        <button type="button" class="btn btn-primary">Save changes</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
 
 
 

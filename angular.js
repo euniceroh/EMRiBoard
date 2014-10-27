@@ -7,7 +7,33 @@ app.controller("ideaCtrl", function($scope, $firebase){
 
 /////////////////////////////////////////////////////////NG REPEAT
 	$scope.addPin = function (a, b, c, d, e){
-		$scope.posts.$add({image_url: a, video: b, audio: c, words: d, hashtags: e, like: false});
+		if(a===undefined||a===null){
+			ablank="";}
+		  else{
+		  	ablank=a;}
+
+		if(b===undefined||b===null){
+			bblank="";}
+		  else{
+		  	bblank=b;}
+
+		if(c===undefined||c===null){
+			cblank="";}
+		  else{
+		  	cblank=c;}
+
+		if(d===undefined||d===null){
+			dblank="";}
+		  else{
+		  	dblank=d;}
+
+		if(e===undefined||e===null){
+			eblank="";}
+		  else{
+		  	eblank=e;}
+
+		
+		$scope.posts.$add({image_url: ablank, video: bblank, audio: cblank, words: dblank, hashtags: eblank, like: false});
 		$scope.image_url="";
 		$scope.video="";
 		$scope.audio="";
