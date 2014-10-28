@@ -147,8 +147,31 @@ p{
 	color:#7c7c7c;
 	margin-top:2%;
 }
+.likedbutton{
+	width:10%;
+	outline:none;
+	padding:0;
+	background-color:white;
+	border:none;
+	margin:1%;
+}
 .liked{
-	background-color:red;
+	width:100%;
+	outline:none;
+	padding-top:5%;
+}
+.likebutton{
+	width:10%;
+	outline:none;
+	padding:0;
+	background-color:white;
+	border:none;
+	margin:1%;
+}
+.likebuttonimg{
+	width:100%;
+	outline:none;
+	padding-top:5%;
 }
 .trashbuttonimg{
 	width:100%;

@@ -61,12 +61,12 @@
 			<input type="submit" value="Add Me" id="doneadd">
 		</form>
 	</div>
-
+	<input type="checkbox" ng-model="checked">
 <!--ENTRIES W DELETE FUNCTION, LIKE BUTTON-->
 	
 	<div class="container">
 		<div class="row">
-		 	<div class="item" ng-repeat="entry in posts | filter:searchEntry">
+		 	<div class="item" ng-repeat="entry in posts | filter:searchEntry" ng-hide="checked && !entry.like">
 		        <div class="well"> 
 			       <div ng-switch on="entry.like">
 						<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"><img class="entryimg" src="{{entry.image_url}}"/></button><br>
@@ -75,8 +75,8 @@
 						<p>{{entry.words}}</p>
 						<p id="tags">{{entry.hashtags}}</p>
 						<button class="trashbutton" ng-click="deletePin(entry)"><img class="trashbuttonimg" src="img/trash.png"/></button>
-						<button ng-switch-when="false" ng-click="likePin(entry)">Like</button>
-						<button ng-switch-when="true" ng-click="likePin(entry)" class="liked">Like</button>	
+						<button class="likebutton" ng-switch-when="false" ng-click="likePin(entry)"><img class="likebuttonimg" src="img/nolike.png"/></button>
+						<button ng-switch-when="true" ng-click="likePin(entry)" class="likedbutton"><img class="liked" src="img/like.png"/></button>	
 					</div>
 		        </div>
 		    </div>
